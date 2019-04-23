@@ -1,0 +1,44 @@
+---
+- hosts: all
+  user: root
+
+  tasks:
+  - name: update cache
+    apt:
+      update_cache: true
+      upgrade: true
+  - name: install samba
+    apt:
+      pkg: samba
+      state: present
+
+  - name: check samba is well installed
+    command: whereis samba
+    register: result
+
+  - debug: var=result.stdout_lines
+
+  - name: create "{{sambauser}}"
+    user:
+      name={% raw %}{{sambauser}}{% endraw %}
+      password={% raw %}{{password |password_hash(‘sha512’)}}{% endraw %}
+
+  - name: create samba folder
+    file:
+      path: /home/sambauser/sambashare
+      state: directory
+
+  - name: create bottom line
+    blockinfile:
+      path: /etc/samba/smb.conf
+      block: |
+        [global]
+          idmap config * : backend = tdb
+
+        [sambashare]
+          comment = Samba on Ubuntu
+          path = /home/sambauser/sambashare
+          read only = no
+          browsable = yes
+
+      backup: yes
