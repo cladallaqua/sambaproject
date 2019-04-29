@@ -3,7 +3,7 @@ samba project with ansible
 
 #**ANSIBLE PART**
 
-The command used to execute the following file is : 
+The command used to execute samba.yml is : 
 
 ```
 ansible-playbook -i hosts -l servscaleway samba.yml --extra-vars "sambabauser=name_user password=user_password"
