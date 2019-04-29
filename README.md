@@ -29,7 +29,7 @@ ansible-playbook -i hosts -l servscaleway samba.yml --extra-vars "sambabauser=na
 
 my config:
 
-In the _.bashrc_ file write :
-- ```export SCW_TOKEN=<your_token>``` and ```export SCALEWAY_ORGANIZATION=<your_organization_id>```
 
-Just run ```packer build  scaleway-cloud-courses-template.json```
+- In the _.bashrc_ file write : ```export SCW_TOKEN=<your_token>``` and ```export SCALEWAY_ORGANIZATION=<your_organization_id>```
+
+- Run ```packer build  scaleway-cloud-courses-template.json```
