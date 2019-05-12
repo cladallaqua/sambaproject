@@ -14,7 +14,7 @@ The command used to execute samba.yml is :
 ```
 ansible-playbook -i hosts -l servscaleway samba.yml --extra-vars "sambabauser=name_user password=user_password"
 ```
-
+To connect to the samba server, use : `smbclient -L 51.15.62.129 -U%`
 ### **TERRAFORM PART**
 
 **Terraform file:**  _main.tf_
