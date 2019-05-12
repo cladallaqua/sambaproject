@@ -1,5 +1,7 @@
 provider "scaleway" {
-  region = "ams1"
+  region = "${var.region}"
+  organization = "${var.organization}"
+  token        = "${var.scw_token}"
 }
 
 data "scaleway_image" "terraformwilliam" {
