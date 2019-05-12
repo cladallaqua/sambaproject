@@ -18,10 +18,21 @@ ansible-playbook -i hosts -l servscaleway samba.yml --extra-vars "sambabauser=na
 ### **TERRAFORM PART**
 
 **Terraform file:**  _main.tf_
+- create _variables.tfvars_, and put the name of your variables inside:
+```
+scw_token=x
 
-- Create .scwrc file
-- Configure this .scwrc file with adding this line : ```scw login --token=<your_token> --organization=<your_organization_id>```
-- Run ```terraform init``` then ```terraform plan```then ```terraform apply```
+organization=x
+
+region=x
+```
+- Run 
+
+```terraform init``` 
+
+then ```terraform plan -var-file="variables.tfvars"```
+
+then ```terraform apply -var-file="variables.tfvars"```
 
 ### **PACKER PART**
 
