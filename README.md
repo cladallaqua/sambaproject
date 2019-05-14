@@ -14,7 +14,9 @@ The command used to execute samba.yml is :
 ansible-playbook samba.yml
 ```
 The hosts file is now at /etc/ansible/hosts so we don't have to pass -i hosts as argument
+
 The variables are now in /vars/main.yml
+
 To connect to the samba server, use : `smbclient -U% //51.15.62.129`
 ### **TERRAFORM PART**
 
