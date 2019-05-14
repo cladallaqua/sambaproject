@@ -24,12 +24,8 @@
   ],
   "provisioners": [
     {
-      "type": "shell",
-      "script": "ubuntu_install.sh"
-    },
-    {
-      "type": "shell",
-      "inline": ["sync"]
+      "type": "ansible",
+      "playbook_file": "samba.yml"
     }
   ]
 }
