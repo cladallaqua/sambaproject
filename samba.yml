@@ -28,7 +28,7 @@
 
   - debug: var=result.stdout_lines
 
-  - name: create "{{sambauser}}"
+  - name: create sambauser
     user:
       name={% raw %}{{sambauser}}{% endraw %}
       password={% raw %}{{password |password_hash(‘sha512’)}}{% endraw %}
