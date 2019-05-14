@@ -20,7 +20,7 @@ The variables are now in _/vars/main.yml_
 To connect to the samba server, use : `smbclient -U% //51.15.62.129`
 ### **TERRAFORM PART**
 
-**Terraform file:**  _main.tf_
+**Terraform file:**  _main.tf_ _variables.tf_
 - create _variables.tfvars_, and put the name of your variables inside:
 ```
 scw_token=x
