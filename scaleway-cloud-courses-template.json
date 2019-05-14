@@ -24,8 +24,13 @@
   ],
   "provisioners": [
     {
+      "type": "shell",
+      "inline": ["sync"]
+    },
+    {
       "type": "ansible",
       "playbook_file": "samba.yml"
     }
+
   ]
 }
