@@ -26,8 +26,6 @@ To connect to the samba server, use : `smbclient -U% //51.15.62.129`
 scw_token=x
 
 organization=x
-
-region=x
 ```
 - Run 
 
