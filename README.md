@@ -23,9 +23,9 @@ To connect to the samba server, use : `smbclient -U% //51.15.62.129`
 **Terraform file:**  _main.tf_ _variables.tf_
 - create _variables.tfvars_, and put the name of your variables inside:
 ```
-scw_token=x
+scw_token="x"
 
-organization=x
+organization="x"
 ```
 - Run 
 
