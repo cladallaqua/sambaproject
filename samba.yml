@@ -1,8 +1,12 @@
 ---
 - hosts: all
   user: root
-
+  vars_files:
+   - vars/main.yml
   tasks:
+  - name: fixing apt
+    raw: apt-get install python-minimal aptitude -y
+
   - name: update cache
     apt:
       update_cache: true
@@ -38,7 +42,8 @@
         [sambashare]
           comment = Samba on Ubuntu
           path = /home/sambauser/sambashare
+          public= yes
           read only = no
           browsable = yes
-
+          guest ok = yes
       backup: yes
